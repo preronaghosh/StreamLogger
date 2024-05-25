@@ -11,6 +11,13 @@ enum class LogLevel {
     CRITICAL 
 };
 
+enum class LogLevelColor {
+    RED = 31,
+    GREEN,
+    YELLOW, 
+    BLUE,
+};
+
 class Logger {
 public:
     Logger(LogLevel level, const char* file, int line);
@@ -29,6 +36,9 @@ public:
 
 private:
     LogLevel logLevel;
+
+    void setColor(int code);
+    void resetColor();
 };
 
 #define LOGINFO() Logger(LogLevel::INFO, __FILE__, __LINE__)
