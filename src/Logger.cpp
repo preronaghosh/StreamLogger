@@ -1,7 +1,6 @@
 #include "Logger.hpp"
 #include "LoggerUtils.hpp"
 
-#include <chrono>
 #include <iomanip>
 #include <thread>
 #include <string>
