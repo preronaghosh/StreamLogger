@@ -6,4 +6,4 @@ project(MyProject VERSION 1.0)
 include_directories(include)
 
 # Add the source files to the executable target
-add_executable(main src/main.cpp src/Logger.cpp)
+add_executable(main src/main.cpp src/Logger.cpp src/LoggerUtils.cpp)
