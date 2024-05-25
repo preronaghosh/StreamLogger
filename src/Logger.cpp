@@ -1,7 +1,16 @@
 #include "Logger.hpp"
 
+#include <chrono>
+#include <iomanip>
+#include <thread>
+#include <string>
+
+std::thread::id getThreadID() {
+    return std::this_thread::get_id();
+}
+
 Logger::Logger(LogLevel level, const char* file = "", int line = 0) : logLevel{level} {
-    std::cout << file << ": " << line << ": ";
+    std::cout << "threadID: " << getThreadID() << " " << ": " << file << " " << line << ": ";
     switch (logLevel) {
         case LogLevel::INFO:
             setColor(static_cast<int>(LogLevelColor::GREEN)); 
